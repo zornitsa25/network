@@ -8,12 +8,11 @@ void PacketHandler(u_char* args, const struct pcap_pkthdr* header, const u_char*
 void PacketInfo(const u_char* packet);
 void WriteAddress(u_char* ptr, FILE* file);
 
-
 int main(int argc, char *argv[])
 {
-	char errorBuffer[PCAP_ERRBUF_SIZE]; /* 256 */
+    char errorBuffer[PCAP_ERRBUF_SIZE]; /* 256 */
 
-	pcap_t* handler = pcap_open_offline("src/hw2.pcap", errorBuffer);
+    pcap_t* handler = pcap_open_offline("src/hw2.pcap", errorBuffer);
 
     if(!handler) {
         printf("pcap_open_offline(): %s\n", errorBuffer);
