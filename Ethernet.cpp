@@ -4,10 +4,7 @@
 #include <netinet/in.h>
 #include <netinet/if_ether.h>
 
-void PacketHandler(u_char* args,
-				   const struct pcap_pkthdr* header,
-				   const u_char* packet);
-
+void PacketHandler(u_char* args, const struct pcap_pkthdr* header, const u_char* packet);
 void PacketInfo(const u_char* packet);
 void WriteAddress(u_char* ptr, FILE* file);
 
@@ -29,9 +26,7 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-void PacketHandler(u_char* args,
-				   const struct pcap_pkthdr* header,
-				   const u_char* packet)
+void PacketHandler(u_char* args, const struct pcap_pkthdr* header, const u_char* packet)
 {
     PacketInfo(packet);
 }
